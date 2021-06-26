@@ -45,7 +45,7 @@ public class EmployeeController {
 	}
 	
 	@PutMapping("/{id}")
-	public Employee update(	@PathVariable("id") String id, 
+	public Object update(	@PathVariable("id") String id, 
 							@RequestBody EmployeeParam employeeParam) {
 		
 		Optional<Employee> employeeOpt = employeeService.findById(id);

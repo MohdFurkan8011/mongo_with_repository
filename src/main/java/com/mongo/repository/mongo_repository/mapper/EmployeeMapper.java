@@ -1,5 +1,7 @@
 package com.mongo.repository.mongo_repository.mapper;
 
+import org.modelmapper.ModelMapper;
+
 import com.mongo.repository.mongo_repository.modal.Employee;
 import com.mongo.repository.mongo_repository.params.EmployeeParam;
 
@@ -10,19 +12,18 @@ public final class EmployeeMapper {
 	public static Employee mapToEmployee(EmployeeParam employeeParam) {
 		
 		
-		return map(new Employee(), employeeParam);
+		return mapping(new Employee(), employeeParam);
 	}
 	
 	public static Employee mapToEmployee(Employee employee, EmployeeParam employeeParam) {
 		
-		return map(employee, employeeParam);
+		return mapping(employee, employeeParam);
 	}
 	
-	public static Employee map(Employee employee, EmployeeParam employeeParam) {
+	public static Employee mapping(Employee employee, EmployeeParam employeeParam) {
 		
-		employee.setFirstName(employeeParam.getFirstName());
-		employee.setLastName(employeeParam.getLastName());
-		employee.setAddress(employeeParam.getAddress());
+		ModelMapper modelMapper = new ModelMapper();
+		modelMapper.map(employeeParam, employee);
 		
 		return employee;
 	}
