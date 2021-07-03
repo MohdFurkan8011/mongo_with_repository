@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.mongo.repository.mongo_repository.modal.constant.Gender;
+
 import lombok.Data;
 
 @Document(collection = "student")
@@ -20,5 +22,7 @@ public class Student {
 	
 	private Address address;
 	private List<Course> courses;
+	
+	private Gender gender;
 
 }
