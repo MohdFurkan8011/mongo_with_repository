@@ -1,3 +1,3 @@
 # Mongo Repository demo
 
-Switch to master master for the same
+Switch to master branch for the same
